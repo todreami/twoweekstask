@@ -1,0 +1,14 @@
+C:\unityconsolefolder\twoweektask\twoweektask\bin\Debug\net8.0\twoweektask.exe
+C:\unityconsolefolder\twoweektask\twoweektask\bin\Debug\net8.0\twoweektask.deps.json
+C:\unityconsolefolder\twoweektask\twoweektask\bin\Debug\net8.0\twoweektask.runtimeconfig.json
+C:\unityconsolefolder\twoweektask\twoweektask\bin\Debug\net8.0\twoweektask.dll
+C:\unityconsolefolder\twoweektask\twoweektask\bin\Debug\net8.0\twoweektask.pdb
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.GeneratedMSBuildEditorConfig.editorconfig
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.AssemblyInfoInputs.cache
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.AssemblyInfo.cs
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.csproj.CoreCompileInputs.cache
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.dll
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\refint\twoweektask.dll
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.pdb
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\twoweektask.genruntimeconfig.cache
+C:\unityconsolefolder\twoweektask\twoweektask\obj\Debug\net8.0\ref\twoweektask.dll
