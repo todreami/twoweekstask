@@ -162,10 +162,11 @@ namespace twoweektask
             Console.WriteLine();
             Console.WriteLine("1.상태보기");
             Console.WriteLine("2.인벤토리");
+            Console.WriteLine("3.임무보기");
             Console.WriteLine("");
 
             //유저들이 착할 떄만? 78? 안녕하세요 1번으로 부탁드려요?
-            switch (CheckValidInput(1, 2))
+            switch (CheckValidInput(1, 3))
             {
                 case 1:
                     StatusMenu();
@@ -173,6 +174,11 @@ namespace twoweektask
                 case 2:
                     InventoryMenu();
                     break;
+                case 3:
+                    QusetMenu();
+                    break;
+
+
             }
 
         }
@@ -190,16 +196,18 @@ namespace twoweektask
             {
                 _items[i].PrintItemStatDescription();
             }
+            
+
             Console.WriteLine("");
-            Console.WriteLine("0, 나가기");
+            Console.WriteLine("0.나가기");
             Console.WriteLine("1.장착관리");
             Console.WriteLine("");
             switch (CheckValidInput(0, 1))
             {
-                case 1:
+                case 0:
                     StartMenu();
                     break;
-                case 2:
+                case 1:
                     EquipMenu();
                     break;
             }
@@ -237,6 +245,97 @@ namespace twoweektask
             }
         }
 
+        private static void QusetMenu()
+        {
+            Console.Clear();
+            ShowHighlightedText("■ Quest!! ■");
+            Console.WriteLine("");
+            Console.WriteLine("1.적을 처치");
+            Console.WriteLine("2.장비를 장착하기");
+            Console.WriteLine("3.더욱 더 강해지기!");
+
+
+
+
+
+            Console.WriteLine("");
+            Console.WriteLine("0. 뒤로가기");
+            Console.WriteLine("");
+
+            switch (CheckValidInput(0, 3))
+            {
+                case 0:
+                    StartMenu();
+                    break;
+                case 1:
+                    QuestFirst();
+                    break;
+                case 2:
+                    QuestSecond();
+                    break;
+                case 3:
+                    QuestThird();
+                    break;
+            }
+
+
+        }
+
+
+        private static void QuestFirst()
+        {
+            Console.Clear();
+            ShowHighlightedText("■ Quest!! ■");
+            Console.WriteLine("");
+            Console.WriteLine("적을 처치");
+            Console.WriteLine("");
+            Console.WriteLine("이봐! 적들이 많아졌어.\n안전을 위해서라도 수를 줄여야겠는데.\n자네가 좀 처치해주게!");
+            Console.WriteLine("");
+            Console.WriteLine("적 3마리 처치 (0/3)");
+            Console.WriteLine("");
+            Console.WriteLine("-보상-   \n[칭호]숙련된전사");
+
+
+
+
+
+
+        }
+
+        private static void QuestSecond()
+        {
+            Console.Clear();
+            ShowHighlightedText("■ Quest!! ■");
+            Console.WriteLine("");
+            Console.WriteLine("장비를 장착하기");
+            Console.WriteLine("");
+            Console.WriteLine("이봐! 모험은 처음이지?\n장비는 모험의 기본이지.\n한 번 잡아보라구!");
+            Console.WriteLine("");
+            Console.WriteLine("'장비관리'에서 장비를 장착하기");
+            Console.WriteLine("");
+            Console.WriteLine("-보상-   \nGold 500");
+        }
+
+        private static void QuestThird()
+        {
+            Console.Clear();
+            ShowHighlightedText("■ Quest!! ■");
+            Console.WriteLine("");
+            Console.WriteLine("더욱 더 강해지기!");
+            Console.WriteLine("");
+            Console.WriteLine("어엿한 모험가로군\n모험의 첫걸음을 옮길 때가 왔어.\n앞길을 막는 녀석은 모두 날려버려.");
+            Console.WriteLine("");
+            Console.WriteLine("'장비관리'에서 장비를 장착하기");
+            Console.WriteLine("");
+            Console.WriteLine("-보상-   \nGold 500");
+
+
+        }
+
+
+
+
+
         private static void ToggleEquipStatus(int idx)
         {
             _items[idx].IsEquipped = !_items[idx].IsEquipped;
@@ -260,12 +359,12 @@ namespace twoweektask
             int bonusAtk = getSumBonusAtk();
             PrintTextWithhights("공격력 : ", (_player.Atk + bonusAtk).ToString(), bonusAtk > 0 ? string.Format(" (+{0})", bonusAtk) : "");
             int bonusDef = getSumBonusDef();
-            PrintTextWithhights("방어력 : ", (_player.Def + bonusDef).ToString(), bonusAtk > 0 ? string.Format(" (+{0})", bonusDef) : "");
+            PrintTextWithhights("방어력 : ", (_player.Def + bonusDef).ToString(), bonusDef > 0 ? string.Format(" (+{0})", bonusDef) : "");
             int bonusHp = getSumBonusHp();
             PrintTextWithhights("체력 : ", (_player.Hp + bonusHp).ToString(), bonusHp > 0 ? string.Format(" (+{0})", bonusHp) : "");
             PrintTextWithhights("골드 : ", _player.Gold.ToString());
             Console.WriteLine("");
-            Console.WriteLine("0, 뒤로가기");
+            Console.WriteLine("0. 뒤로가기");
             Console.WriteLine("");
             switch (CheckValidInput(0, 0))
             {
@@ -330,7 +429,7 @@ namespace twoweektask
             bool result; //while
             do //일단 한 번 실행을 보장
             {
-                Console.WriteLine("원하시는 행동을 입력해주세요");
+                Console.WriteLine("원하시는 행동을 입력해주세요.");
                 result = int.TryParse(Console.ReadLine(), out keyInput);
             } while (result == false || CheckIfValid(keyInput,min,max) == false);
 
@@ -353,30 +452,21 @@ namespace twoweektask
             private static void PrintStartLogo()
             {
 
-            //Console.WriteLine("o__ __o      o__ __o        o o__ __o ____o__ __o____ o");
-            //Console.WriteLine("  / v     vW    <| vW      <|>         <| vW    /   W   /   W    <|>");
-            //Console.WriteLine(" />       <W   / W     <W     / W         / W     <W        Wo /         /");
-            //Console.WriteLine("_Wo____        Wo / o / o /   Wo       Wo / o /         | o /   Wo");
-            //Console.WriteLine("     W_W__o__ | __  _ <|/  <| __ __ |>       | __  _ <|         < >      <| __ __ |>");
-            //Console.WriteLine("            W    |          /       W       |       W         |       /       W");
-            //Console.WriteLine(" W         /   < o > o /         Wo < o >       Wo o     o /         Wo");
-            //Console.WriteLine("o       o |       / v           vW    | vW     <|    / v           vW  ");
-            //Console.WriteLine("   <W__ __/>    / W     />             <W  / W         <W    / W  />             <W      ");                                        
-            //Console.WriteLine("o__ __o     __o__ o          o o         o o                   o ____o__ __o____ o__ __o o__ __o");
-            //Console.WriteLine("   / v     vW      |    <|W        /|>  <|>       <|>  <|>                 <|>    /   W   /   W     / v     vW      <| vW      ");
-            //Console.WriteLine(" />       <W    / W   / WWo o// W  / W       / W  / W                 / W         Wo/         />       <W     / W     <W     ");
-            //Console.WriteLine("_Wo____         Wo /   Wo / vW  / v Wo /  Wo /       Wo /  Wo / o /   Wo | o /           Wo   Wo / o /W");
-            //Console.WriteLine("     W_W__o__ |     |   <W/>   |    |         |    |               <| __ __ |>      < >      <|             |>   | __  _ <");
-            //Console.WriteLine("           W    < >   / W        / W  < >       < >  / W              /       W       |        WW           //    |       W     ");
-            //Console.WriteLine(" W         /     |    Wo /        Wo /   W         /   Wo / o /         Wo o          W         /     < o >       Wo");
-            // Console.WriteLine("o       o o     |          | o       o |            / v           vW   <| o       o | vW ");
-            // Console.WriteLine("  <W__ __/> __ |> _ / W        / W    <W__ __/>    / W _Wo__ / _ />             <W  / W          <W__ __/>      / W         <W");
-            Console.WriteLine("====================================================================================================");
-            Console.WriteLine("                          PRESS ANYKEY TO START                                      ");
-            Console.WriteLine("====================================================================================================");
-            Console.WriteLine();
+            Console.WriteLine("     ___________________ _____  __________ ___________ _____ ");             
+            Console.WriteLine(" /   _____/W______   W /  _  W W______   WW__ ___//  _  W    ");
+            Console.WriteLine(" W_____  W  |     ___//  /_W  W |       _/  |    |  /  /_W  W");  
+            Console.WriteLine(" /        W |    |   /    |    W|    |   W  |    | /    |    W   ");
+            Console.WriteLine("/_______  / |____|   W____|__  /|____|_  /  |____| W____|__  /   ");
+            Console.WriteLine("        W/                   W/        W/                  W/    ");
 
-            }
+
+
+            Console.WriteLine("==============================");
+            Console.WriteLine("     PRESS ANYKEY TO START    ");
+            Console.WriteLine("==============================");
+            Console.ReadKey(); //이거 없으면 안나오는거였다.
+
+        }
 
 
 

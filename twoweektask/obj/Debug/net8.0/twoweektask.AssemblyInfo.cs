@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("twoweektask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a9a8f9d21192fc6a3fe6a3e2356dc3d2f1e7617")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fbe321eaf84c9fa0205db4446adf66d58f2dffe")]
 [assembly: System.Reflection.AssemblyProductAttribute("twoweektask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("twoweektask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
